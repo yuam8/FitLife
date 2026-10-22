@@ -9,8 +9,8 @@ user_height = float(input('Подскажите Ваш рост в м через
 # Функция для расчета ИМТ
 def _calc_bmi(weight, height):
     bmi = weight / (height ** 2)
-    bmi = round(bmi, 1)
-    return bmi
+    round_bmi = round(bmi, 1)
+    return round_bmi
 
 
 #  Функция для расчета количества потребления воды, от массы тела
@@ -21,8 +21,11 @@ def _calc_water_l(weight, wpk):
     return water_l
 
 
+liters_per_day = _calc_water_l(user_weight, WATER_PER_KG)
+bmi = _calc_bmi(user_weight, user_height)
+
 print(f"Отчет для Вас, {user_name}. ({user_age} лет)")
-print(f'Ваш индекс массы тела (ИМТ): {_calc_bmi(user_weight, user_height)}')
+print('Ваш индекс массы тела (ИМТ):', bmi)
 print('Вам рекомендуется выпивать', end=' ')
-print(f'{_calc_water_l(user_weight, WATER_PER_KG)} л. воды в день')
+print(f'{liters_per_day} л. воды в день')
 print('Расчет окончен, будьте здоровы!')
