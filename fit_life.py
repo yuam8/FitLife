@@ -9,16 +9,15 @@ user_height = float(input('Подскажите Ваш рост в м через
 # Функция для расчета ИМТ
 def _calc_bmi(weight, height):
     bmi = weight / (height ** 2)
-    round_bmi = round(bmi, 1)
-    return round_bmi
+    return round(bmi,1)
 
 
 #  Функция для расчета количества потребления воды, от массы тела
 def _calc_water_l(weight, wpk):
     wpk = WATER_PER_KG
     water_ml = weight * wpk
-    water_l = round((water_ml / 1000), 2)
-    return water_l
+    round((water_ml / 1000), 2)
+    return round((water_ml / 1000), 2)
 
 
 liters_per_day = _calc_water_l(user_weight, WATER_PER_KG)
