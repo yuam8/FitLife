@@ -1,6 +1,6 @@
 # Проект FitLife - MVP версия 1.0
-WATER_PER_KG = 30 # Константа потребления воды на кг тела
-ML_PER_L = 1000 # Константа перевода мл в л   
+WATER_PER_KG = 30  # Константа потребления воды на кг тела
+ML_PER_L = 1000  # Константа перевода мл в л
 user_name = input('Здравствуйте, как Вас зовут? ')
 
 
@@ -13,22 +13,22 @@ while True:
         break
     except ValueError:
         print('Введите возраст целым числом')
-         
+
 
 while True:
     try:
-        user_weight = float(input('Введите Ваш вес в кг используя точку: "81.2" '))
+        user_weight = float(input('Введите Ваш вес в кг через точку: "81.2" '))
         if user_weight <= 0 or user_weight > 650:
             print('Введите реальный вес')
             continue
         break
     except ValueError:
         print('Вес должен быть от 0 до 650 кг и введен через точку')
-            
+
 
 while True:
     try:
-        user_height = float(input('Подскажите Ваш рост в м через точку: "1.89" '))
+        user_height = float(input('Введите Ваш рост в м через точку: "1.89" '))
         if user_height <= 0 or user_height > 3:
             print('Введите реальный рост')
             continue
@@ -37,8 +37,7 @@ while True:
         print('Рост должен быть от 0 до 3 м и введен через точку')
 
 
-
-# Функция для расчета ИМТ
+#  Функция для расчета ИМТ
 def _calc_bmi(weight, height):
     bmi = weight / (height ** 2)
     return round(bmi, 1)
